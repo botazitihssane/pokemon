@@ -37,6 +37,16 @@ public class PokemonListViewModel extends ArrayAdapter<Pokemon> {
         ImageView imageViewPokemon=listViewItem.findViewById(R.id.imageViewPokemon);
         TextView textViewName=listViewItem.findViewById(R.id.textViewName);
 
+        URL url= null;
+        try {
+            int p = position+1;
+            url = new URL("https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/"+p+".png");
+            Bitmap bitmap = BitmapFactory.decodeStream(url.openStream());
+            imageViewPokemon.setImageBitmap(bitmap);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+
         textViewName.setText(pokemons.get(position).name);
      /*   try {
             URL url=new URL(pokemons.get(position).URL);

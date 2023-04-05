@@ -7,6 +7,8 @@ import com.example.pokemonapp.model.PokemonResponse;
 
 public interface PokemonRepoServiceAPI {
     @GET("v2/pokemon")
+
     Call<PokemonResponse> getPokemons();
 
 }
+
