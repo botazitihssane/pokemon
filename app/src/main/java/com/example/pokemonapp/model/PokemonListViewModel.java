@@ -48,14 +48,7 @@ public class PokemonListViewModel extends ArrayAdapter<Pokemon> {
         }
 
         textViewName.setText(pokemons.get(position).name);
-     /*   try {
-            URL url=new URL(pokemons.get(position).URL);
-            Bitmap bitmap= BitmapFactory.decodeStream(url.openStream());
-            imageViewPokemon.setImageBitmap(bitmap);
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
-*/
+
         return listViewItem;
     }
 }
